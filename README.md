@@ -22,15 +22,15 @@ We be happy, we be healthy, we be saved and we be fine! What more can we ask for
 6) Tasks(*task_id*, task, target_pot, requester_id, assignee_id, points_given, datetime_opened, is_done, urgency)
 
 ### Relationships:
-..* A user can own many pots.
-..* One pot can be owned only by one user, where a pot can own a plant that is used either for DECO or FOOD.
-..* A user can take up to 10 tasks, and a user can request a maximum of 10 tasks.
-..* A user can redeem as many rewards as he or she wants, as long as he or she has sufficient points.
-..* A user can have no limits to redemption of rewards, but its usability varies based on the validity date (I GOT A -YEET~).
-..* Tasks that are complete are irrelevant.
-..* Rewards that have been redeeemed are irrelevant.
-..* Rewards whose validity date have been passed can still be redeemed but not used (the same rewards can be re-released in future, YOU BETTER PRAY M8).
+* A user can own many pots.
+* One pot can be owned only by one user, where a pot can own a plant that is used either for DECO or FOOD.
+* A user can take up to 10 tasks, and a user can request a maximum of 10 tasks.
+* A user can redeem as many rewards as he or she wants, as long as he or she has sufficient points.
+* A user can have no limits to redemption of rewards, but its usability varies based on the validity date (I GOT A -YEET~).
+* Tasks that are complete are irrelevant.
+* Rewards that have been redeeemed are irrelevant.
+* Rewards whose validity date have been passed can still be redeemed but not used (the same rewards can be re-released in future, YOU BETTER PRAY M8).
 
 P.S. Since this project is part of a school project, I got no demo and it is complete. However, you may access the project by using:
-..* Username: kcard3@sciencedaily.com
-..* Password: v5LL4X264CF
+* Username: kcard3@sciencedaily.com
+* Password: v5LL4X264CF
