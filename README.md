@@ -1,7 +1,7 @@
 # memesgarden
 ## CWF2020 Fall and IT2002 Project
 
-### Project built using Django with PostgreSQL for a database.
+### Project built using Django with PostgreSQL for a database. Mock data created using Mockaroo.
 
 
 ### Backstory:
