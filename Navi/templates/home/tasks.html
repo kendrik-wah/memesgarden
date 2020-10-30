@@ -1,0 +1,56 @@
+<html>
+	
+	<head>
+		<title>Tasks</title>
+	</head>
+
+	<body>
+
+		<div class='links'>
+			<a href='{% url 'homepage' %}'>Home</a>
+			<a href='{% url 'your_plants' %}'>Your plants</a>
+			<a href='{% url 'your_tasks' %}'>Your tasks!</a>
+			<a href='{% url 'your_rewards' %}'>Your rewards!</a>
+			<a href='{% url 'rewards' %}'>Claim a reward!</a>
+		</div>
+
+		<div class='requests'>
+			<h1 class='requests_h1'>Requested</h1>
+				{% if not requested %}
+					<h3 class='requests_notice'>You have not made any requests!</h3>
+					<a href='{% url 'request_tasks' %}'>Make a request</a>
+				{% else %}
+					<ul>
+						{% for t in requested %}
+							<li>{{t.0}}, {{t.1}}, {{t.2}}, {{t.3}}, {{t.4}}, {{t.5}}, {{t.6}}</li>
+						{% endfor %}
+					</ul>
+					{% if request_length <= 10 %}
+						<a href='{% url 'request_tasks' %}'>Make a request</a>
+					{% else %}
+						<h3 class='requests_notice'>There are 10 types of people: those who make too many requests, and those who don't.</h3>
+					{% endif %}
+				{% endif %}
+		</div>
+
+		<div class='accepts'>
+			<h1 class='accepts_h1'>Accepted</h1>
+				{% if accept_length == 0 %}
+					<h3 class='accepts_notice'>Your lack of contribution is unacceptable.</h3>
+					<a href='{% url 'tasks' %}'>Hard work makes the farm grow</a>
+				{% else %}
+					<ul>
+						{% for t in assigned %}
+							<li>{{t.0}}, {{t.1}}, {{t.2}}, {{t.3}}, {{t.4}}, {{t.5}}, {{t.6}}</li>
+						{% endfor %}
+					</ul>
+					{% if accept_length <= 10 %}
+						<a href='{% url 'tasks' %}'>Hard work makes the wheels turn</a>
+					{% else %}
+						<h3 class='accepts_notice'>We see your drive and motivation, but you are human too! Complete existing tasks!</h3>
+					{% endif %}
+				{% endif %}
+		</div>
+	</body>
+
+</html>

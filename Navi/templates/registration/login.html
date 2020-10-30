@@ -1,0 +1,34 @@
+<html>
+	
+	<head>
+		<title>MemesGarden Log-in</title>
+	</head>
+
+	<body>
+		<form method='POST' action="{% url 'authenticate' %}"> {% csrf_token %}
+			<label for="email"><b>E-mail address:</b></label>
+			<input type='text' placeholder='email' name='email' required>
+
+			<label for="pword"><b>Password:</b></label>
+			<input type='password' placeholder='password' name='password' required>
+
+			<button type='submit'>Log In</button>
+
+		    <label>
+		      <input type="checkbox" checked="checked" name="remember"> Remember me
+		    </label>
+		</form>
+
+		{% if fail is not None %}
+			{% if fail %}
+				<p>{{fail}}</p><br>
+			{% endif %}
+		{% endif %}
+
+	    <a href=''>Forgot password?</a>
+
+	    <a href='{% url 'register' %}'>Don't have an account? Click here to register!</a>
+
+	    <a href='{% url 'index' %}'>Cancel</a>
+	</body>
+</html>

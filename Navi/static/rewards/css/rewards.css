@@ -1,0 +1,35 @@
+.grid {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 8px;
+	height: min-content;
+	width: min-content;
+}
+
+.cell {
+	border: 1px solid black;
+	padding: 5px 5px 5px 5px;
+	width: 300px;
+	display: block;
+	justify-content:center;
+	align-items:center;
+	text-align:center;
+}
+
+.image {
+	height: 200px;
+	width: 200px;	
+}
+
+.reward_name {
+	overflow:overlay;
+	word-wrap: break-word;
+}
+
+.points_required {
+	overflow:overlay;
+}
+
+.validity {
+	overflow:overlay;
+}

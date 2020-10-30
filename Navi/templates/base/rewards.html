@@ -1,0 +1,38 @@
+<html>
+	
+	<head>
+		<title>Rewards</title>
+
+		{% load static %}
+		<link rel="stylesheet" type='text/css' href="{% static 'rewards/css/rewards.css' %}">
+		<script src="{% static 'rewards/js/rewards.js' %}"></script>
+	</head>
+
+	<body>
+		<h1>Rewards</h1>
+
+		<div class='links'>
+			<a href='{% url 'homepage' %}'>Home</a>
+			<a href='{% url 'your_plants' %}'>Your plants</a>
+			<a href='{% url 'your_tasks' %}'>Your tasks!</a>
+			<a href='{% url 'your_rewards' %}'>Your rewards!</a>
+			<a href='{% url 'rewards' %}'>Claim a reward!</a>
+		</div>
+
+		<h3>MemPts: {{points}}</h3>
+
+		<form method='POST' action='claim_rewards' id='claim'> {% csrf_token %}
+			<div class="grid">
+		        {% for r in rewards %}
+		            <button class="cell" type='submit' name='id' value='{{r.0}}'>
+		            	<img class="image" name='image' id='image' src="{% static "rewards/images/"|add:r.2 %}" />
+		            	<h3 class="reward_name" name='reward_name' id='reward_name'>{{r.1}}</h3>
+		            	<p class="points_required" name='points' id='points'>{{r.3}} MemPts</p>
+		            	<p class="validity" name='validity' id='validity'>Valid till: {{r.4}}</p>
+		            </button>
+		        {% endfor %}
+			</div>
+		</form>
+	</body>
+
+</html>

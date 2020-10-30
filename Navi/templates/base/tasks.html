@@ -1,0 +1,35 @@
+<html>
+	
+	<head>
+		<title>Tasks</title>
+	</head>
+
+	<body>
+		<h1>Tasks</h1>
+
+			{% if is_logged_in is not None %}
+				{% if is_logged_in %}
+					<div class='links'>
+						<a href='{% url 'homepage' %}'>Home</a>
+						<a href='{% url 'your_plants' %}'>Your plants</a>
+						<a href='{% url 'your_tasks' %}'>Your tasks!</a>
+						<a href='{% url 'your_rewards' %}'>Your rewards!</a>
+						<a href='{% url 'rewards' %}'>Claim a reward!</a>
+					</div>
+				{% endif %}
+			{% endif %}
+
+			<form method='POST' action='accept_tasks'> {% csrf_token %}
+				{% if not tasks %}
+					<h1 class='no_tasks'>Huh, somehow all the tasks were opened by you.</h1>
+				{% else %}
+					{% for t in tasks %}
+						<input type='checkbox' name='{{t.0}}' value='{{t.0}}'>{{t.1}}, {{t.2}}, {{t.3}}, {{t.4}}, {{t.5}}, {{t.6}}, {{t.7}}, {{t.8}}</input>
+					{% endfor %}
+				{% endif %}
+
+				<button type='submit'>Accept Tasks</button>
+			</form>
+	</body>
+
+</html>

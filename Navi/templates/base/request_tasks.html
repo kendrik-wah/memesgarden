@@ -1,0 +1,39 @@
+<html>
+	
+	<head>
+		<title>Task Request</title>
+	</head>
+
+	<body>
+
+		<div class='links'>
+			<a href='{% url 'homepage' %}'>Home</a>
+			<a href='{% url 'your_plants' %}'>Your plants</a>
+			<a href='{% url 'your_tasks' %}'>Your tasks!</a>
+			<a href='{% url 'your_rewards' %}'>Your rewards!</a>
+			<a href='{% url 'rewards' %}'>Claim a reward!</a>
+		</div>
+
+		<form method='POST' action='create_tasks' id='request_form'> {% csrf_token %}
+
+			<label for="task"><b>Task:</b></label>
+			<input type='text' placeholder='task' name='task' id='task' required>
+
+			<label for="pot"><b>Pot:</b></label>
+			<input type='text' placeholder='pot' name='pot' id='pot' required>
+
+			<label for="points"><b>Points:</b></label>
+			<input type='number' placeholder='points' name='points' id='points' min="10" max="500" value="10" required>
+
+			<label for="urgency"><b>Urgency:</b></label>
+			<input type='range' placeholder='urgency' name='urgency' id='urgency' min="1" max="5" step="1" value="1" required>
+
+			<button type='submit'>Ask, and you shall receive</button>
+		</form>
+		
+		<div class='backtrack'>
+			<a href='{% url 'tasks' %}'>There are contributions yet to be fully realized - Accept a task instead</a>
+		</div>
+	</body>
+
+</html>

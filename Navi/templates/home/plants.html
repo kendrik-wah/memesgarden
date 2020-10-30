@@ -1,0 +1,48 @@
+<html>
+	
+	<head>
+		<title>Plants</title>
+	</head>
+
+	<body>
+		<h1>Plants</h1>
+
+		<div class='links'>
+			<a href='{% url 'homepage' %}'>Home</a>
+			<a href='{% url 'your_plants' %}'>Your plants</a>
+			<a href='{% url 'your_tasks' %}'>Your tasks!</a>
+			<a href='{% url 'your_rewards' %}'>Your rewards!</a>
+			<a href='{% url 'rewards' %}'>Claim a reward!</a>
+		</div>
+
+		<div id='filterContainer'>
+		  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+		  <button class="btn" onclick="filterSelection('food')"> Food</button>
+		  <button class="btn" onclick="filterSelection('deco')"> Deco</button>
+		  <button class="btn" onclick="filterSelection('location')"> Location</button>		
+		</div>
+
+		<h3> You currently own:</h3>
+			<div class='food'>
+				<h3>Food</h3>
+				<ul>
+				{% for r in food %}
+					<li>{{r.0}}, {{r.1}}, {{r.5}}</li>
+				{% endfor %}
+				</ul>
+			</div>
+
+			<div class='deco'>
+				<h3>Feed</h3>
+				<ul>
+				{% for r in deco %}
+					<li>{{r.0}}, {{r.1}}, {{r.5}}</li>
+				{% endfor %}
+				</ul>
+			</div>
+
+		<a href='{% url 'request_add_plant' %}'>Our farm flourishes with every additional plant.</a>
+
+	</body>
+
+</html>

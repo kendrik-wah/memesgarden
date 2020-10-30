@@ -1,0 +1,55 @@
+.first_para {
+	text-align: justify;
+	display: flex;
+}
+
+.first_para p {
+	width: 50%;
+}
+
+.first_para img {
+	border: 1px black solid;
+	width: 50%;
+}
+
+.second_para {
+	text-align: justify;
+	display: flex;
+}
+
+.second_para p {
+	width: 50%;
+}
+
+.second_para img {
+	border: 1px black solid;
+	width: 50%;
+}
+
+.third_para {
+	text-align: justify;
+	display: flex;
+}
+
+.third_para p {
+	width: 50%;
+}
+
+.third_para img {
+	border: 1px black solid;
+	width: 50%;
+}
+
+.fourth_para {
+	text-align: justify;
+	display: flex;
+}
+
+.fourth_para p {
+	width: 50%;
+}
+
+.fourth_para img {
+	border: 1px black solid;
+	width: 50%;
+}

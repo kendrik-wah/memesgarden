@@ -1,0 +1,50 @@
+<html>
+	
+	<head>
+		<title>MemesGarden Register</title>
+	</head>
+
+	<body>
+		<form name='register' method='POST' action='register'> {% csrf_token %}
+			<label for="fname"><b>First Name:</b></label>
+			<input type='text' placeholder='First name' name='fname' required>
+
+			<label for="lname"><b>Last Name</b></label>
+			<input type='text' placeholder='Last name' name='lname' required>
+			<br>
+
+			<label for="gender"><b>Gender</b></label><br>
+			<input type='radio' id="male" name="gender" value="Male" required>
+			<label for="male">Male</label><br>
+			<input type='radio' id="female" name="gender" value="Female" required>
+			<label for="female">Female</label><br>
+			<input type='radio' id="other" name="gender" value="Other" required>
+			<label for="other">Other</label>
+			<br>
+
+			<label for="cnumber"><b>Contact number</b></label>
+			<input type='text' placeholder='Contact Number' name='contact' required>
+			{% if invalid_contact is not None %}
+				{% if invalid_contact %}
+					<p>{{invalid_contact}} is an invalid contact number.</p><br>
+				{% endif %}
+			{% endif %}
+
+		    <label for="email"><b>Email</b></label>
+			<input type='text' placeholder='Email' name='email' required>
+			{% if invalid_email is not None %}
+				{% if invalid_email %}
+					<p>{{invalid_email}} is already a registered email.</p><br>
+				{% endif %}
+			{% endif %}
+
+		    <label for="pass"><b>Password</b></label>
+			<input type='password' placeholder='Password' name='password' required>
+			
+		    
+		    <button type='submit' name='register'>Register</button>
+		</form>
+		
+	    <a href='{% url 'index' %}'>Cancel</a>
+	</body>
+</html>
